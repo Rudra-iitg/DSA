@@ -4,11 +4,9 @@ using namespace std;
 class pattern {
 public:
   void printpattern(int n) {
-    int num = 1;
-    for (int i = 1; i <= n; i++) {
-      for (int j = 1; j <= i; j++) {
-        cout << num << " ";
-        num++;
+    for (int i = n; i >= 1; i--) {
+      for (char ch = 'A'; ch <= 'A' + i - 1; ch++) {
+        cout << ch << " ";
       }
       cout << endl;
     }
