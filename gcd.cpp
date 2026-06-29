@@ -1,19 +1,68 @@
+// #include <iostream>
+// using namespace std;
+
+// int gcd(int num1, int num2) {
+//   for (int i = min(num1, num2); i > 0; i--) {
+//     if (num1 % i == 0 && num2 % i == 0) {
+//       return i;
+//     }
+//   }
+//   return 0;
+// }
+
+// int main() {
+//   int num1 = 4425;
+//   int num2 = 545;
+//   cout << "The GCD of " << num1 << " and " << num2 << " is: " << gcd(num1,
+//   num2)
+//        << endl;
+//   return 0;
+// }
+
+//****************************OPTIMAL
+//APPROACH**********************************/
+
+#include <algorithm>
 #include <iostream>
+
 using namespace std;
 
-int gcd(int num1, int num2) {
-  for (int i = min(num1, num2); i > 0; i--) {
-    if (num1 % i == 0 && num2 % i == 0) {
-      return i;
+int findGcd(int a, int b) {
+  // Continue loop as long as both
+  // a and b are greater than 0
+  while (a > 0 && b > 0) {
+    // If a is greater than b,
+    // subtract b from a and update a
+    if (a > b) {
+      // Update a to the remainder
+      // of a divided by b
+      a = a % b;
+    }
+    // If b is greater than or equal
+    // to a, subtract a from b and update b
+    else {
+      // Update b to the remainder
+      // of b divided by a
+      b = b % a;
     }
   }
-  return 0;
+  // Check if a becomes 0,
+  // if so, return b as the GCD
+  if (a == 0) {
+    return b;
+  }
+  // If a is not 0,
+  // return a as the GCD
+  return a;
 }
 
 int main() {
-  int num1 = 4425;
-  int num2 = 545;
-  cout << "The GCD of " << num1 << " and " << num2 << " is: " << gcd(num1, num2)
-       << endl;
+  int n1 = 20, n2 = 15;
+
+  // Find the GCD of n1 and n2
+  int gcd = findGcd(n1, n2);
+
+  cout << "GCD of " << n1 << " and " << n2 << " is: " << gcd << endl;
+
   return 0;
 }
