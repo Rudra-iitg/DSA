@@ -7,6 +7,7 @@ int gcd(int num1, int num2) {
       return i;
     }
   }
+  return 0;
 }
 
 int main() {
