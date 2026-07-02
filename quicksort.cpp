@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 class sorting{
     public:
@@ -23,6 +24,17 @@ class sorting{
         return i + 1;
     }
 
+    void second_large_small_ele(vector<int> array, int n){
+        if (n == 0 || n == 1){
+            cout << -1 << " " << -1 << endl;
+        }
+        sort(array.begin(), array.end());
+        int small = array[1];
+        int large = array[n-1];
+        cout << "The second largest element is : " << large << endl;
+        cout << "The second smallest element is : " << small ;
+    }
+
 };
 
 int main(){
@@ -39,6 +51,20 @@ int main(){
         cout << x << '\t';
     }
     cout << endl;
+    cout << "The largest element in the array is : ";
+    int max = arr[0];
+    for(int i = 0; i <= arr.size() - 1; i++){
+        if(arr[i] > max){
+            max = arr[i];
+        }
+    }
+    cout << max;
+    cout << endl;
+
+    sort.second_large_small_ele(arr,arr.size()-1);
+
+    cout << endl;
+
     return 0;
 
 }
