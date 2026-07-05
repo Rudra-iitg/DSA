@@ -25,7 +25,7 @@ int main(){
     cout << "Unique coutn : " << k << '\n';
     cout << "Array after removing duplicate: " ;
     for(int i = 0; i < k ; i++){
-        cout << nums[i] << "  " << '\n';
+        cout << nums[i] << "  ";
     }
     cout << endl;
     return 0;
