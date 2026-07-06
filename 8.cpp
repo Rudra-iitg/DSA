@@ -6,16 +6,24 @@ using namespace std;
 class Solution{
     public:
     vector<int> move_zeros(vector<int> &arr, int n){
-        vector<int> temp(n,0);
-        int index = 0;
-        for(int i = 0 ; i < n; i++){
-            if(arr[i] != 0){
-                temp[index] = arr[i];
-                index++;
+        // BRUTE FORCE
+        // vector<int> temp(n,0);
+        // int index = 0;
+        // for(int i = 0 ; i < n; i++){
+        //     if(arr[i] != 0){
+        //         temp[index] = arr[i];
+        //         index++;
+        //     }
+        // }
+        // for(int i = 0; i < n; i++){
+        //     arr[i] = temp[i];
+        // }
+        //************Optimal Aprroach */
+        for(int i = 0; i < n ; i++){
+            if(arr[i] == 0 && arr[i+1] != 0 ){
+                arr[i] = arr[i+1];
+                arr[i+1] = 0;
             }
-        }
-        for(int i = 0; i < n; i++){
-            arr[i] = temp[i];
         }
         return arr;
     }
