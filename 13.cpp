@@ -15,7 +15,7 @@
 // 3. Memoization vs tabulation
 // - Memoization: top-down recursion + cache
 // - Tabulation: bottom-up iteration
-//
+// 
 // 4. State design patterns
 // - dp[i]   : answer for prefix up to i
 // - dp[i][j]: answer for two parameters, like index and capacity
