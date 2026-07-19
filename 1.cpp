@@ -20,6 +20,13 @@ class student{
         this -> name = name;
         this -> num = num;
     }
+    student(const student &srcobj){
+        cout << "Student deflault constructor called\n";
+        this -> id = srcobj.id;
+        this -> age = srcobj.age;
+        this -> name = srcobj.name;
+        this -> num = srcobj.num;
+    }
     void study(){
         cout << this -> name << " Studying\n ";
     }
@@ -52,5 +59,12 @@ int main(){
     cout << A.name << " " << A.age << endl;
     A.sleep();
     B.study();
+    student E = B;
+    cout << B.name << " " << B.age << endl;
+    // DYNAMIC MEMORY ALLOCATION
+    student *Z = new student(4, 9, "Karan", 8);
+    cout << Z -> name << endl;
+    cout << Z -> id << endl;
+    delete Z;
     return 0;
 }
