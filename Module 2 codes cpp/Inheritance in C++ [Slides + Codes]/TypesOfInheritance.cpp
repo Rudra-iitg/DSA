@@ -179,17 +179,17 @@ public:
 int main()
 {
     // Single Inheritance
-    // Developer dev("Ramu Kaka", 101, "C++");
-    // dev.show();
+    Developer dev("Ramu Kaka", 101, "C++");
+    dev.show();
 
     // // Multiple Inheritance
-    // TechLead techLead("Anna Dev", 202, "Project X", 5);
-    // techLead.displayInfo();
+    TechLead techLead("Anna Dev", 202, "Project X", 5);
+    techLead.displayInfo();
 
     // // Multi-level Inheritance
-    // HRDirector hrDirector("Lucy Madam", 303);
-    // hrDirector.handleHRDuties();
-    // hrDirector.manageHRDepartment();
+    HRDirector hrDirector("Lucy Madam", 303);
+    hrDirector.handleHRDuties();
+    hrDirector.manageHRDepartment();
 
     // Hierarchical Inheritance
     CEO ceo("Devi Lal", 404);
