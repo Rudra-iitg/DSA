@@ -33,7 +33,30 @@ class Employees{
             acc_bal = new double(bal);
             debt = new double(debt_amt); 
         }
+        //====================COPY CONSTRUCTOR===================
 
+        Employees(const Employees & other){
+            cout << "Copy constructor called " << endl;
+            acc_no = other.acc_no;
+            IFS = other.IFS;
+            name = other.name;
+            saving = other.saving;
+            acc_bal = new double(*other.acc_bal);
+            debt = new double(*other.debt);
+        }
+        // ====================COPY ASSIGNMENT OPERATOR==========
+        Employees& operator = (const Employees &other){
+            cout << "Copy Assignment operator was called: " << endl;
+            if(this == &other) return *this;
+
+            acc_no = other.acc_no;
+            IFS = other.IFS;
+            name = other.name;
+            saving = other.saving;
+            *acc_bal = *other.acc_bal;
+            *debt = *other.debt;
+            return *this;
+        }
         // ====================GETTER============================
         int getAccNo()const{
             return acc_no;
@@ -117,5 +140,11 @@ int main(){
     cout << "B's Balance : " << B.getBalance() << endl;
     A.setName("Pawan");
     cout << A.getName() << "  " << B.getName() << endl;
+    Employees C = B;
+    C.setBalance(45334.65);
+    cout << "B's balance after C changed: " << B.getBalance() << "C's Balance :"
+    << C.getBalance() << endl;
+    Employees D;
+    D = B;
     return 0;
 }
