@@ -20,6 +20,7 @@ public:
                 }
             }
         }
+        //OPTIMAL SOLUTIN BUT DO NOT WORK ON NEGATIVE ARRAY ELEMETNS
         // int left = 0, right = 0;
         // int sum = arr[0];
 
@@ -39,8 +40,8 @@ public:
 };
 
 int main() {
-    vector<int> vec = {-1, 1, 1};
-    int sum = 2;
+    vector<int> vec = {9, -3, 3, -1, 6, -5};
+    int sum = 0;
     Sol Ans;
     int k = Ans.max_sum(vec, sum);
     cout << "The maximum length is " << k << endl;
