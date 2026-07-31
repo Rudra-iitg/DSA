@@ -4,16 +4,28 @@ using namespace std;
 class Solution{
     public:
     int profit(vector<int> arr){
-        int profit = 0;
-        int n = arr.size();
-        for(int i = 0; i < n-1; i++ ){
-            for(int j = i + 1; j < n; j++){
-                if(arr[j] - arr[i] > profit){
-                    profit = arr[j] - arr[i];
-                }
+        // int profit = 0;
+        // int n = arr.size();
+        // for(int i = 0; i < n-1; i++ ){
+        //     for(int j = i + 1; j < n; j++){
+        //         if(arr[j] - arr[i] > profit){
+        //             profit = arr[j] - arr[i];
+        //         }
+        //     }
+        // }
+
+        //=========OPTIMAL APPROACH============
+        int min_price = INT_MAX;
+        int max_profit = 0;
+        for(int price:arr){
+            if(price < min_price){
+                min_price = price;
+            }
+            else{
+                max_profit = max(max_profit, price - min_price);
             }
         }
-        return profit;
+        return max_profit;
     }
 };
 
