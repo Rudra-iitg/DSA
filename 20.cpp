@@ -16,7 +16,7 @@ class Solution{
                 st.insert(nums[i]);
             }
             for(auto it : st){
-                if(st.find(n-1) == st.end()){
+                if(st.find(it-1) == st.end()){
                     int cnt = 1;
                     int x = it;
 
