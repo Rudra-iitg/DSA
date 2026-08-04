@@ -20,7 +20,7 @@ class Solution{
                     int cnt = 1;
                     int x = it;
 
-                    while(st.find(x + 1) != st.end()){
+                    while(st.find(x +  1) != st.end()){
                         x += 1;
                         cnt += 1;
                     }
