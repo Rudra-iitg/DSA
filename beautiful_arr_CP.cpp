@@ -1,26 +1,22 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
 using namespace std;
 
 int beautiful_arr(int row, int col){
     int count = 0;
-    if(row != 3){
-        count += abs(row - 3);
-    }
-    else if(col != 3){
-        count += abs(col - 3);
+    if(row != 3 || col != 3){
+        count = abs(row - 3) + abs(col - 3);
+        return count;
     }
     else{
         return count;
-    };
-    return count;
+    }
 }
 
 int main(){
     vector<vector<int>> arr;
     arr.resize(5, vector<int>(5));
-    int row;
+    int row ;
     int col;
     cout << "enter the nums: ";
     for(int i = 0; i < 5 ; i++){
