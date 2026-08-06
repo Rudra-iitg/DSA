@@ -35,31 +35,60 @@
 
 
 //=================CP : HULK 705A===============
+// #include <iostream>
+// #include <string>
+// using namespace std;
+// int main(){
+//     int n = 0;
+//     cin >> n;
+//     for(int i = 0; i < n ; i++){
+//         if(i % 2 == 0){
+//             cout << "I hate ";
+//             if(i == n - 1){
+//                 cout << "it";
+//             }
+//             else{
+//                 cout << "that ";
+//             }
+//         }
+//         else{
+//             cout << "I love ";
+//             if(i == n - 1){
+//                 cout << "it";
+//             }
+//             else{
+//                 cout << "that ";
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
+//==================CP: 	1328A - Divisibility Problem===========
 #include <iostream>
-#include <string>
-using namespace std;
+#include <vector>
 int main(){
     int n = 0;
-    cin >> n;
-    for(int i = 0; i < n ; i++){
-        if(i % 2 == 0){
-            cout << "I hate ";
-            if(i == n - 1){
-                cout << "it";
-            }
-            else{
-                cout << "that ";
-            }
+    std::cin >> n;
+    std::vector<int> ans  (n , 0);
+    for(int i = 0 ; i < n ; i++){
+        int a = 0;
+        int b = 0;
+        std::cin >> a >> b;
+        if(a % b == 0){
+            ans[i] = 0;
+            continue;
+        }
+        else if(a > b){
+            ans[i] = b - (a % b); // 5, 3.   7, 3
+            continue;
         }
         else{
-            cout << "I love ";
-            if(i == n - 1){
-                cout << "it";
-            }
-            else{
-                cout << "that ";
-            }
+            ans[i] = b - a;
         }
+    }
+    for(int x : ans){
+        std::cout << x << "\n";
     }
     return 0;
 }
