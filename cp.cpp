@@ -35,27 +35,53 @@
 // }
 
 // +++++++++++++734A==================
+// #include <iostream>
+// #include <string>
+// using namespace std;
+// int main(){
+//     int n;
+//     string st;
+//     cin >> n;
+//     cin >> st;
+//     int a = 0, d = 0;
+//     for(int i = 0 ; i < n; i++){
+//         if(st[i] == 'A') a++;
+//         else d++;
+//     }
+//     if(a > d){
+//         cout << "Anton";
+//     }
+//     else if(d > a){
+//         cout << "Danik";
+//     }
+//     else {
+//         cout << "Friendship";
+//     }
+//     return 0;
+// }
+
+// ====================. 41A=====================
 #include <iostream>
 #include <string>
 using namespace std;
 int main(){
-    int n;
-    string st;
-    cin >> n;
-    cin >> st;
-    int a = 0, d = 0;
-    for(int i = 0 ; i < n; i++){
-        if(st[i] == 'A') a++;
-        else d++;
+    string s;
+    string t;
+    cin >> s >> t;
+    if(s.size() != t.size()){
+        cout << "NO";
+        return 0;
     }
-    if(a > d){
-        cout << "Anton";
-    }
-    else if(d > a){
-        cout << "Danik";
-    }
-    else {
-        cout << "Friendship";
+    int n = s.size();
+    for(int i = 0 ; i < n ; i++){
+        if(s[i] != t[n - i - 1]){
+            cout << "NO";
+            break;
+        }
+        else{
+            if(i == n - 1) cout << "YES";
+            else continue;
+        }
     }
     return 0;
 }
