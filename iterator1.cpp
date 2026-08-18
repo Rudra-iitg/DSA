@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <iterator> // Needed for task 4;
+#include <set> // Needed for task 6;
 using namespace std;
 int main(){
     {
@@ -56,6 +57,18 @@ int main(){
             }
         }
         for(int x : v){
+            cout << x << "  ";
+        }
+        cout << endl;
+    }
+    {
+        set<int> s = {10,20,30,40,50};
+        set<int>::iterator it = s.lower_bound(25);
+        if(it != s.end()){
+            cout << "Found " << *it << endl;
+            s.erase(it);
+        }
+        for(int x : s){
             cout << x << "  ";
         }
         cout << endl;
