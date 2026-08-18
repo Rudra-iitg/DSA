@@ -73,6 +73,25 @@ int main(){
         }
         cout << endl;
     }
+    {
+        vector<int> nums = {3,5,7,9,12,13,24,26,31,33,34,39,47,56};
+        int target = 87;
+        vector<int>::iterator left = nums.begin();
+        auto right = nums.end() - 1;
+        while(left < right){
+            int sum = *left + *right ;
+            if(sum == target){
+                cout << "Found the elemtents: " << *left << " , " << *right << endl; 
+                break;
+            }
+            else if(sum < target){
+                left++;
+            }
+            else{
+                right--;
+            }
+        }
+    }
     return 0;
 }
 
