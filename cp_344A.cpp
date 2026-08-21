@@ -48,20 +48,47 @@
 // }
 //=================136A=================
 
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+// int main(){
+//     int n;
+//     cin >> n;
+//     vector<int> arr(n);
+//     for(int i = 0; i < n ; i++){
+//         int a;
+//         cin >> a;
+//         arr[a - 1] = i + 1;
+//     }
+//     for(int x : arr){
+//         cout << x << " ";
+//     }
+//     return 0;
+// }
+
+//======================61A================
 #include <iostream>
-#include <vector>
+#include <string>
+
 using namespace std;
-int main(){
-    int n;
-    cin >> n;
-    vector<int> arr(n);
-    for(int i = 0; i < n ; i++){
-        int a;
-        cin >> a;
-        arr[a - 1] = i + 1;
+
+int main() {
+    string a, b;
+    cin >> a >> b;
+    
+    // The problem guarantees they are the same length, so we just loop through 'a'
+    for (int i = 0; i < a.length(); i++) {
+        
+        // If the characters at this index are different, print '1'
+        if (a[i] != b[i]) {
+            cout << '1';
+        } 
+        // If they are the same, print '0'
+        else {
+            cout << '0';
+        }
     }
-    for(int x : arr){
-        cout << x << " ";
-    }
+    cout << endl;
+    
     return 0;
 }
