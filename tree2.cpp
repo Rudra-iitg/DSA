@@ -19,6 +19,15 @@ void PrintTree(Node* node){
         PrintTree(child);
     }
 }
+int CountNode(Node* node) {
+    int count = 1;
+
+    for (Node* child : node->children) {
+        count += CountNode(child);
+    }
+
+    return count;
+}
 int main(){
     Node* root = new Node(1);
     Node* n2 = new Node(2);
@@ -31,7 +40,10 @@ int main(){
     n2->children.push_back(n4);
     n2->children.push_back(n5);
     PrintTree(n2);
-
+    cout << endl;
+    cout << "Total number of nodes are: ";
+    cout << CountNode(root);
+    cout << endl;
     delete n4;
     delete n3;
     delete n5;
