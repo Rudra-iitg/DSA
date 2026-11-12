@@ -23,7 +23,6 @@ void insert_at_position(Node*& head, int x, int k){
         head = new_node;
         return;
     }
-
     // Case 2: walk to the node BEFORE position k
     Node* prev = head;
     for (int i = 0; i < k - 1 && prev->next != nullptr; i++)
