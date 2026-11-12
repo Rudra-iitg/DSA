@@ -38,17 +38,7 @@ bool hasCycle(Node* head) {
     }
     return false;                  // fast hit nullptr, so no cycle
 }
-Node* reverseList(Node* head){
-    Node* prev = nullptr;
-    Node* curr = head;
-    while(curr != nullptr){
-        Node* nxt = curr -> next;
-        curr -> next = prev;
-        prev = curr;
-        curr = nxt;
-    }
-    return prev;
-}
+
 
 int main() {
     vector<int> arr = {34, 32, 12, 43, 54, 23, 42, 65, 76, 25, 89, 94, 67, 43, 72, 88};

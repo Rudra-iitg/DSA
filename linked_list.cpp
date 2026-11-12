@@ -33,6 +33,23 @@ public:
     Node(int data1, Node* next1) { data = data1; next = next1; }
     Node(int data1) { data = data1; next = nullptr; }
 };
+void reverseList(Node* head){
+    Node* prev = nullptr;
+    Node* curr = head;
+    while(curr != nullptr){
+        Node* nxt = curr -> next;
+        curr -> next = prev;
+        prev = curr;
+        curr = nxt;
+    }
+    head = prev;
+    Node* temp = head;
+    while(temp != nullptr){
+        cout << temp -> data << " -> " ; 
+        temp = temp-> next;
+    }
+    cout << "nullptr";
+}
 
 int main() {
     vector<int> arr = {2, 5, 8, 7};
@@ -53,7 +70,9 @@ int main() {
         temp = temp->next;
     }
     cout << "nullptr\n";   // 2 -> 5 -> 8 -> 7 -> nullptr
-
+    temp = head;
+    reverseList(temp);
+    cout << endl;
     // Free memory (avoid leaks!)
     temp = head;
     while (temp != nullptr) {
